@@ -3,9 +3,9 @@
             [clojure.walk :as walk]
             [nextjournal.clerk :as-alias clerk]
             ;; required deps
-            nextjournal.clerk.static-app
-            nextjournal.viewer.notebook
-            nextjournal.clerk.render)
+            #?@(:cljs [nextjournal.clerk.static-app
+                       nextjournal.viewer.notebook
+                       nextjournal.clerk.render]))
   #?(:cljs (:require-macros mhuebert.clerk-cljs)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
