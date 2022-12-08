@@ -1,1 +1,6 @@
-{:deps {}}
+{:deps {io.github.nextjournal/clerk
+        {:git/sha "ce767a6fa846cbc2ddb113956aa2fa0fe19dd157"}
+        io.github.nextjournal/clerk.render
+        {:git/url "https://github.com/nextjournal/clerk.git"
+         :git/sha "ce767a6fa846cbc2ddb113956aa2fa0fe19dd157"
+         :deps/root "render"}}}

@@ -15,15 +15,11 @@ It includes a shadow-cljs build called `:clerk`, which outputs to `public/clerk`
 
 ### deps.edn
 
-Add a `:clerk` alias including this library as well as Clerk and its render module.
+Add a `:clerk` alias including this library, which includes a compatible version of Clerk and its render module.
 
 ```clj
 :clerk {:extra-paths ["src/notebooks"]
-        :extra-deps {io.github.mhuebert/clerk-cljs {:git/sha "XX"}
-                     io.github.nextjournal/clerk {:git/sha "XX"}
-                     io.github.nextjournal/clerk.render {:git/url "https://github.com/nextjournal/clerk.git"
-                                                         :git/sha "XX"
-                                                         :deps/root "render"}}}
+        :extra-deps {io.github.mhuebert/clerk-cljs {:git/sha "XX"}}}
 ```
 
 ### shadow-cljs.edn 
