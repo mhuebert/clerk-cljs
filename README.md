@@ -11,8 +11,7 @@ Include an alias in `deps.edn` which includes:
 3. This library.
 
 The following configuration assumes that you've put your notebooks under `src/notebooks`.
-It includes a shadow-cljs build called `:clerk`, which outputs to `public/clerk`, and starts a dev server on port `8008`
-- 
+It includes a shadow-cljs build called `:clerk`, which outputs to `public/clerk`, and starts a dev server on port `8008`.
 
 ### deps.edn
 
