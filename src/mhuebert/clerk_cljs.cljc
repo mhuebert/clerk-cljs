@@ -2,7 +2,7 @@
   (:require [applied-science.js-interop :as j]
             [clojure.walk :as walk]
             [nextjournal.clerk #?(:clj :as :cljs :as-alias) clerk]
-            ;; required deps
+   ;; required deps
             #?@(:cljs [nextjournal.clerk.static-app
                        nextjournal.viewer.notebook
                        nextjournal.clerk.render]))
@@ -33,12 +33,12 @@
 
 (def stable-hash (comp hash stable-hash-form))
 
-(defmacro cljs
+(defmacro show-cljs
   "Evaluate expressions in ClojureScript instead of Clojure.
    Result is treated as hiccup if it is a vector (unless tagged with ^:inspect),
    otherwise passed to Clerk's `inspect`."
   [& exprs]
-  (let [fn-name (stable-hash exprs)]
+  (let [fn-name (str *ns* "-" (stable-hash exprs))]
     (if (:ns &env)
       ;; in ClojureScript, define a function
       `(let [f# (fn [] ~@exprs)]
