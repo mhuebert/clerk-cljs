@@ -54,11 +54,6 @@
                         ;; ensure that a reagent atom exists for this fn
                         (applied-science.js-interop/update-in!
                          js/window [:clerk-cljs ~fn-name] (fn [x] (or x (reagent.core/atom {:loading? true}))))
-                        ;; when we stop using this
-                        (nextjournal.clerk.render.hooks/use-effect
-                         (constantly
-                          #(j/assoc-in! js/window [:clerk-cljs ~fn-name] nil))
-                         [~fn-name])
                         (let [res @(j/get-in js/window [:clerk-cljs ~fn-name])]
                           (if (:loading? res)
                             [:div.my-2 {:style {:color "rgba(0,0,0,0.5)"}} "Loading..."]
