@@ -1,6 +1,6 @@
 {:deps {io.github.nextjournal/clerk
-        {:git/sha "382019962d979c4669ed042ec56151cfb74710b7"}
+        {:git/sha "ec666210f11763fce4fec74072acca1e6525d29f"}
         io.github.nextjournal/clerk.render
         {:git/url "https://github.com/nextjournal/clerk.git"
-         :git/sha "382019962d979c4669ed042ec56151cfb74710b7"
+         :git/sha "ec666210f11763fce4fec74072acca1e6525d29f"
          :deps/root "render"}}}
