@@ -4,7 +4,6 @@
             [nextjournal.clerk #?(:clj :as :cljs :as-alias) clerk]
    ;; required deps
             #?@(:cljs [nextjournal.clerk.static-app
-                       nextjournal.viewer.notebook
                        nextjournal.clerk.render]))
   #?(:cljs (:require-macros mhuebert.clerk-cljs)))
 
