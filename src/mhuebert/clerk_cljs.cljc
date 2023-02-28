@@ -32,6 +32,19 @@
 
 (def stable-hash (comp hash stable-hash-form))
 
+#?(:cljs
+   (j/assoc! js/window (str ::show-result)
+             (fn show-result [f]
+               #?(:cljs
+                  (let [result (try (f)
+                                    (catch js/Error e
+                                      (js/console.error e)
+                                      [nextjournal.clerk.render/error-view e]))]
+                    (if (and (vector? result)
+                             (not (:inspect (meta result))))
+                      [:div.my-1 result]
+                      [nextjournal.clerk.render/inspect result]))))))
+
 (defmacro show-cljs
   "Evaluate expressions in ClojureScript instead of Clojure.
    Result is treated as hiccup if it is a vector (unless tagged with ^:inspect),
@@ -56,12 +69,5 @@
                         (let [res @(j/get-in js/window [:clerk-cljs ~fn-name])]
                           (if (:loading? res)
                             [:div.my-2 {:style {:color "rgba(0,0,0,0.5)"}} "Loading..."]
-                            (let [result (try ((:f res))
-                                              (catch js/Error e
-                                                (js/console.error e)
-                                                [nextjournal.clerk.render/error-view e]))]
-                              (if (and (vector? result)
-                                       (not (:inspect (meta result))))
-                                [:div.my-1 result]
-                                [nextjournal.clerk.render/inspect result])))))}
+                            [(j/get js/window (str ::show-result)) (:f res)])))}
          nil))))
