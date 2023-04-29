@@ -1,7 +1,7 @@
 {:paths ["src"]
  :deps {io.github.nextjournal/clerk
-        {:git/sha "6bf3e6282c59cdffaaa21dea0724bda9121fa0ed"}
+        {:git/sha "4ab8972cd67ecd9ef7d61965134004ce7b8efe84"}
         io.github.nextjournal/clerk.render
         {:git/url "https://github.com/nextjournal/clerk.git"
-         :git/sha "6bf3e6282c59cdffaaa21dea0724bda9121fa0ed"
+         :git/sha "4ab8972cd67ecd9ef7d61965134004ce7b8efe84"
          :deps/root "render"}}}
