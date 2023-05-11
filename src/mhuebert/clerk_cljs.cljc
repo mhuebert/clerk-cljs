@@ -2,9 +2,7 @@
   (:require [applied-science.js-interop :as j]
             [clojure.walk :as walk]
             [nextjournal.clerk #?(:clj :as :cljs :as-alias) clerk]
-   ;; required deps
-            #?@(:cljs [nextjournal.clerk.static-app
-                       nextjournal.clerk.render]))
+            #?@(:cljs [nextjournal.clerk.sci-env]))
   #?(:cljs (:require-macros mhuebert.clerk-cljs)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
