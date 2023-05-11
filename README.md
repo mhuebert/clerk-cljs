@@ -4,11 +4,7 @@ Macro for including cljs in [clerk](http://clerk.vision) notebooks.
 
 ## Instructions
 
-Include an alias in `deps.edn` which includes: 
-
-1. Path(s) to your Clerk notebooks,
-2. Clerk and its render module as dependencies,
-3. This library.
+Include an alias in `deps.edn` which includes your Clerk notebooks (ie. `:extra-paths ["notebooks"]`) and this library.
 
 The following configuration assumes that you've put your notebooks under `src/notebooks`.
 It includes a shadow-cljs build called `:clerk`, which outputs to `public/clerk`, and starts a dev server on port `8008`.
